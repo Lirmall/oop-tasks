@@ -42,8 +42,8 @@ package oop.tasks.t1.phone.tasks;
         System.out.println("Звонит " + name + " " + number);
     }
 
-    public void sendMessage(int... i) {
-        for (int n : i) {
+    public void sendMessage(int... numbers) {
+        for (int n : numbers) {
             System.out.println("Сообщение будет отправлено на номер " + n + "\t");
         }
     }
