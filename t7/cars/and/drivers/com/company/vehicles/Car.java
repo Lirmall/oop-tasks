@@ -20,14 +20,14 @@ public class Car {
         this.enginePower = enginePower;
     }
 
-//    public Car(String markOfAuto, double weight, Driver driver, Engine engine) {
-//        this.markOfAuto = markOfAuto;
-//        this.weight = weight;
-//        this.driverName = driver.getFullName();
-//        this.driverDrivingExperience = driver.getDrivingExperience();
-//        this.engineManufacturer = engine.getManufacturer();
-//        this.enginePower = engine.getPower();
-//    }
+    public Car(String markOfAuto, double weight, Driver driver, Engine engine) {
+        this.markOfAuto = markOfAuto;
+        this.weight = weight;
+        this.driverName = driver.getFullName();
+        this.driverDrivingExperience = driver.getDrivingExperience();
+        this.engineManufacturer = engine.getManufacturer();
+        this.enginePower = engine.getPower();
+    }
 
     public String getMarkOfAuto() {
         return markOfAuto;
