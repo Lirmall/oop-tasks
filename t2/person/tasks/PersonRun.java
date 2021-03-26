@@ -5,8 +5,10 @@ public class PersonRun {
         Person person1 = new Person();
         Person person2 = new Person("Иванов Иван Иванович", 42);
 
-        System.out.println(person1.fullName + "," + " " + person1.age);
-        System.out.println(person2.fullName + "," + " " + person2.age);
+        System.out.println(person1.getFullName() + "," + " " + person1.getAge());
+        System.out.println(person2.getFullName() + "," + " " + person2.getAge());
+
+        System.out.println();
 
         person1.move();
         person1.talk();
