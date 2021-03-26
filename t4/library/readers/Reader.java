@@ -1,16 +1,13 @@
 package oop.tasks.t4.library.readers;
 
-/* Определить класс Reader, хранящий такую информацию о пользователе библиотеки:
-ФИО, номер читательского билета, факультет, дата рождения, телефон.
- */
 class Reader {
-    protected String fullName;
-    protected int readerTicket;
-    protected String faculty;
-    protected String bornDate;
-    protected int phoneNumber;
+    private String fullName;
+    private int readerTicket;
+    private String faculty;
+    private String bornDate;
+    private int phoneNumber;
 
-    protected Reader(String fullName, int readerTicket, String faculty, String bornDate, int phoneNumber) {
+    public Reader(String fullName, int readerTicket, String faculty, String bornDate, int phoneNumber) {
         this.fullName = fullName;
         this.readerTicket = readerTicket;
         this.faculty = faculty;
@@ -18,66 +15,77 @@ class Reader {
         this.phoneNumber = phoneNumber;
     }
 
-/* takeBook, который будет принимать количество взятых книг.
-Выводит на консоль сообщение "Петров В. В. взял 3 книги".
- */
+    public String getFullName() {
+        return fullName;
+    }
 
-    protected void takeBook(int i) {
+    public int getReaderTicket() {
+        return readerTicket;
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public String getBornDate() {
+        return bornDate;
+    }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void takeBook(int numberOfBooks) {
         String word = "книги";
-        if (i % 10 == 1) {
+        if (numberOfBooks % 10 == 1) {
             word = "книгу";
         }
 
-        if (i % 10 > 1 && i % 10 < 5) {
+        if (numberOfBooks % 10 > 1 && numberOfBooks % 10 < 5) {
             word = "книги";
         }
 
-        if (i % 10 >= 5 || i > 10 && i < 20) {
+        if (numberOfBooks % 10 >= 5 || numberOfBooks > 10 && numberOfBooks < 20) {
             word = "книг";
         }
 
-        System.out.println(this.fullName + " взял " + i + " " + word);
+        System.out.println(this.getFullName() + " взял " + numberOfBooks + " " + word);
     }
 
-    /*takeBook, который будет принимать переменное количество названий книг.
-    Выводит на консоль сообщение "Петров В. В. взял книги: Приключения, Словарь, Энциклопедия".
-     */
-    protected void takeBook(String... bookName) {
-        System.out.print(this.fullName + " взял ");
-        for (String i : bookName) {
+    public void takeBook(String... bookNames) {
+        System.out.print(this.getFullName() + " взял ");
+        for (String i : bookNames) {
             System.out.print(i + ", ");
         }
         System.out.println(".");
     }
 
-    //takeBook, который будет принимать переменное количество объектов класса Book
-    protected void takeBook(Book... books) {
-        System.out.print(this.fullName + " взял ");
+    public void takeBook(Book... books) {
+        System.out.print(this.getFullName() + " взял ");
         for (Book i : books) {
-            System.out.print(i.bookName + ", ");
+            System.out.print(i.getBookAuthor() + " " + i.getBookName() + ", ");
         }
         System.out.println(".");
     }
 
-    //Аналогичным образом перегрузить метод returnBook().
-    protected void returnBook(int i) {
+    public void returnBook(int numberOfBooks) {
         String word = "книги";
-        if (i % 10 == 1) {
+        if (numberOfBooks % 10 == 1) {
             word = "книгу";
         }
 
-        if (i % 10 > 1 && i % 10 < 5) {
+        if (numberOfBooks % 10 > 1 && numberOfBooks % 10 < 5) {
             word = "книги";
         }
 
-        if (i % 10 >= 5 || i > 10 && i < 20) {
+        if (numberOfBooks % 10 >= 5 || numberOfBooks > 10 && numberOfBooks < 20) {
             word = "книг";
         }
 
-        System.out.println(this.fullName + " вернул " + i + " " + word);
+        System.out.println(this.getFullName() + " вернул " + numberOfBooks + " " + word);
     }
 
-    protected void returnBook(String... bookName) {
+    public void returnBook(String... bookName) {
         System.out.print(this.fullName + " вернул ");
         for (String i : bookName) {
             System.out.print(i + ", ");
@@ -85,10 +93,10 @@ class Reader {
         System.out.println(".");
     }
 
-    protected void returnBook(Book... books) {
-        System.out.print(this.fullName + " вернул ");
+    public void returnBook(Book... books) {
+        System.out.print(this.getFullName() + " вернул ");
         for (Book i : books) {
-            System.out.print(i.bookName + ", ");
+            System.out.print(i.getBookAuthor() + " " + i.getBookName() + ", ");
         }
         System.out.println(".");
     }
