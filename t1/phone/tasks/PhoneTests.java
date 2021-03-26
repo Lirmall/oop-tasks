@@ -10,9 +10,9 @@ public class PhoneTests {
 
     public static void testPhone() {
         Phone phone1 = new Phone(121354, "siemens", 76.0);
-        int number = phone1.number;
+        int number = phone1.getNumber();
         assert number > 0;
-        double weight = phone1.weight;
+        double weight = phone1.getWeight();
         assert weight > 0;
     }
 
@@ -24,8 +24,7 @@ public class PhoneTests {
 
     public static void testSendMessage() {
         Phone phone1 = new Phone(121354, "siemens", 76.0);
-        int number = phone1.number;
+        int number = phone1.getNumber();
         assert number > 0;
     }
-
 }
