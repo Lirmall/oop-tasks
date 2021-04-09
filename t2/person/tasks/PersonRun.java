@@ -1,9 +1,9 @@
 package oop.tasks.t2.person.tasks;
 
 public class PersonRun {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IncorrectAge {
         Person person1 = new Person();
-        Person person2 = new Person("Иванов Иван Иванович", 42);
+        Person person2 = new Person("John Smith", 42);
 
         System.out.println(person1.getFullName() + "," + " " + person1.getAge());
         System.out.println(person2.getFullName() + "," + " " + person2.getAge());
