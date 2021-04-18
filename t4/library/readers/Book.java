@@ -1,19 +1,27 @@
 package oop.tasks.t4.library.readers;
 
 public class Book {
-    private String bookAuthor;
-    private String bookName;
+    private String author;
+    private String name;
 
-    public Book (String bookAuthor, String bookName) {
-        this.bookAuthor = bookAuthor;
-        this.bookName = bookName;
+    public Book(String bookAuthor, String name) {
+        this.setAuthor(bookAuthor);
+        this.setName(name);
     }
 
-    public String getBookAuthor() {
-        return bookAuthor;
+    public String getAuthor() {
+        return author;
     }
 
-    public String getBookName() {
-        return bookName;
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
