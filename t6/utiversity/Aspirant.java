@@ -3,7 +3,12 @@ package oop.tasks.t6.utiversity;
 public class Aspirant extends Student {
     private String scientificWork;
 
-    public Aspirant(String firstName, String lastName, String group, double averageMark, String scientificWork) throws IncorrectAverageMark {
+    public Aspirant(
+            String firstName,
+            String lastName,
+            String group,
+            double averageMark,
+            String scientificWork) throws IncorrectAverageMarkException {
         super(firstName, lastName, group, averageMark);
         this.setScientificWork(scientificWork);
     }
