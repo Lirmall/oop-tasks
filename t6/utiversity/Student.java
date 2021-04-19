@@ -6,7 +6,7 @@ public class Student {
     private String group;
     private double averageMark;
 
-    public Student(String firstName, String lastName, String group, double averageMark) {
+    public Student(String firstName, String lastName, String group, double averageMark) throws IncorrectAverageMark {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setGroup(group);
@@ -17,35 +17,44 @@ public class Student {
         return firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getGroup() {
-        return group;
-    }
-
-    public double getAverageMark() {
-        return averageMark;
-    }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    public String getGroup() {
+        return group;
+    }
+
     public void setGroup(String group) {
         this.group = group;
     }
 
-    public void setAverageMark(double averageMark) {
-        this.averageMark = averageMark;
+    public double getAverageMark() {
+        return averageMark;
     }
 
-    public double getScholarship () {
+    public void setAverageMark(double averageMark) throws IncorrectAverageMark {
+        try {
+            if (averageMark < 0 || averageMark > 5) {
+                throw new IncorrectAverageMark();
+            }
+        } catch (IncorrectAverageMark e) {
+            System.out.println("Average mark must be greater than 0 but less than 5");
+        }
+        finally {
+            this.averageMark = averageMark;
+        }
+    }
+
+    public double getScholarship() {
         if (this.getAverageMark() == 5) {
             return 100;
         } else {

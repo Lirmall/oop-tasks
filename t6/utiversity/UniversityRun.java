@@ -1,7 +1,7 @@
 package oop.tasks.t6.utiversity;
 
 public class UniversityRun {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IncorrectAverageMark {
         Student student1 = new Student("John", "Watson", "Biology", 5);
         Student student2 = new Student("Will", "Metson", "Biology", 3);
         Student student3 = new Student("Donald", "Willer", "Mathematica", 4);
