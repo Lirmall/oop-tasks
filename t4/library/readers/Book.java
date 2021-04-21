@@ -4,8 +4,8 @@ public class Book {
     private String author;
     private String name;
 
-    public Book(String bookAuthor, String name) {
-        this.setAuthor(bookAuthor);
+    public Book(String author, String name) {
+        this.setAuthor(author);
         this.setName(name);
     }
 

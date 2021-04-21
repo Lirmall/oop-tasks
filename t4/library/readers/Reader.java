@@ -7,13 +7,13 @@ class Reader {
     private String dateOfBirth;
     private int phoneNumber;
 
-    public Reader(String fullName, int libraryCardNumber, String faculty, String dateOfBirth, int phoneNumber)
-            throws IncorrectLibraryCardNumber, IncorrectPhoneNumber {
-        this.setFullName(fullName);
-        this.setLibraryCardNumber(libraryCardNumber);
-        this.setFaculty(faculty);
-        this.setDateOfBirth(dateOfBirth);
-        this.setPhoneNumber(phoneNumber);
+    public Reader() {
+    }
+
+    public Reader(String fullName, String faculty, String dateOfBirth) {
+        this.fullName = fullName;
+        this.faculty = faculty;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getFullName() {
@@ -28,10 +28,12 @@ class Reader {
         return libraryCardNumber;
     }
 
-    public void setLibraryCardNumber(int libraryCardNumber) throws IncorrectLibraryCardNumber {
-        this.libraryCardNumber = libraryCardNumber;
+    public void setLibraryCardNumber(int libraryCardNumber) throws IncorrectLibraryCardNumberException {
         if (libraryCardNumber < 0) {
-            throw new IncorrectLibraryCardNumber();
+            throw new IncorrectLibraryCardNumberException();
+
+        } else {
+            this.libraryCardNumber = libraryCardNumber;
         }
     }
 
@@ -55,14 +57,14 @@ class Reader {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) throws IncorrectPhoneNumber {
+    public void setPhoneNumber(int phoneNumber) throws IncorrectPhoneNumberException {
         this.phoneNumber = phoneNumber;
         if (phoneNumber < 0) {
-            throw new IncorrectPhoneNumber();
+            throw new IncorrectPhoneNumberException();
         }
     }
 
-    public void takeBook(int numberOfBooks) throws IncorrectNumberOfBooks {
+    public void takeBook(int numberOfBooks) throws IncorrectNumberOfBooksException {
         String word = "books";
         if (numberOfBooks == 1) {
             word = "book";
@@ -73,7 +75,7 @@ class Reader {
         }
 
         if (numberOfBooks < 0) {
-            throw new IncorrectNumberOfBooks();
+            throw new IncorrectNumberOfBooksException();
         }
 
         System.out.println(this.getFullName() + " took " + numberOfBooks + " " + word);
@@ -95,7 +97,7 @@ class Reader {
         System.out.println(".");
     }
 
-    public void returnBook(int numberOfBooks) throws IncorrectNumberOfBooks {
+    public void returnBook(int numberOfBooks) throws IncorrectNumberOfBooksException {
         String word = "books";
         if (numberOfBooks == 1) {
             word = "book";
@@ -106,7 +108,7 @@ class Reader {
         }
 
         if (numberOfBooks < 0) {
-            throw new IncorrectNumberOfBooks();
+            throw new IncorrectNumberOfBooksException();
         }
 
         System.out.println(this.getFullName() + " returned " + numberOfBooks + " " + word);
@@ -126,5 +128,16 @@ class Reader {
             System.out.print(i.getAuthor() + " " + i.getName() + ", ");
         }
         System.out.println(".");
+    }
+
+    @Override
+    public String toString() {
+        return "Reader{" +
+                "fullName='" + fullName + '\'' +
+                ", libraryCardNumber=" + libraryCardNumber +
+                ", faculty='" + faculty + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                '}';
     }
 }

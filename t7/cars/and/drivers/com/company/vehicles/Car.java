@@ -1,55 +1,79 @@
 package oop.tasks.t7.cars.and.drivers.com.company.vehicles;
 
-/*Класс Car содержит поля - марка автомобиля,
-класс автомобиля,
-вес,
-водитель типа Driver,
-мотор типа Engine.
-Методы start(), stop(), turnRight(), turnLeft(),
-которые выводят на печать: "Поехали", "Останавливаемся", "Поворот направо"
-или "Поворот налево".
-А также метод printInfo(), который выводит полную информацию об автомобиле, ее водителе и моторе.
- */
-
-
 import oop.tasks.t7.cars.and.drivers.com.company.details.Engine;
 import oop.tasks.t7.cars.and.drivers.com.company.professions.Driver;
 
 public class Car {
-    String markOfAuto;
-    double weight;
-    String driverName;
-    int driverDrivingExpirience;
-    String engineManufacturer;
-    double enginePower;
+    private String markOfAuto;
+    private double weight;
+    private String driverName;
+    private int driverDrivingExperience;
+    private String engineManufacturer;
+    private double enginePower;
 
-    public Car(String markOfAuto, double weight, Driver driver, Engine engine) {
+    public Car(String markOfAuto, double weight, String driverName, int driverDrivingExperience, String engineManufacturer, double enginePower) {
         this.markOfAuto = markOfAuto;
         this.weight = weight;
-        this.driverName = driver.fullName;
-
+        this.driverName = driverName;
+        this.driverDrivingExperience = driverDrivingExperience;
+        this.engineManufacturer = engineManufacturer;
+        this.enginePower = enginePower;
     }
 
-    String start() {
-        return "Поехали";
+//    public Car(String markOfAuto, double weight, Driver driver, Engine engine) {
+//        this.markOfAuto = markOfAuto;
+//        this.weight = weight;
+//        this.driverName = driver.getFullName();
+//        this.driverDrivingExperience = driver.getDrivingExperience();
+//        this.engineManufacturer = engine.getManufacturer();
+//        this.enginePower = engine.getPower();
+//    }
+
+    public String getMarkOfAuto() {
+        return markOfAuto;
     }
 
-    String stop() {
-        return "Останавливаемся";
+    public double getWeight() {
+        return weight;
     }
 
-    String turnLeft() {
-        return "Поворот налево";
+    public String getDriverName() {
+        return driverName;
     }
 
-    String turnRight() {
-        return "Поворот направо";
+
+
+    public int getDriverDrivingExperience() {
+        return driverDrivingExperience;
     }
 
-    String printInfo() {
-        System.out.println(this.markOfAuto);
-        System.out.println(this.weight);
-        System.out.println(this.);
+    public String getEngineManufacturer() {
+        return engineManufacturer;
     }
 
+    public double getEnginePower() {
+        return enginePower;
+    }
+
+    public String start() {
+        return getMarkOfAuto() + " Поехали";
+    }
+
+    public String stop() {
+        return getMarkOfAuto() + " Останавливаемся";
+    }
+
+    public String turnLeft() {
+        return getMarkOfAuto() + " Поворот налево";
+    }
+
+    public String turnRight() {
+        return getMarkOfAuto() + " Поворот направо";
+    }
+
+    public String printInfo() {
+        return "Марка автомобиля: " + getMarkOfAuto() + ", вес автомобиля: " + getWeight() + ". "
+                + "Имя водителя: " + getDriverName() + ", стаж вождения: " + getDriverDrivingExperience() + ". "
+                + "Производитель двигателя: " + getEngineManufacturer() + ", мощность: " + getEnginePower() + ". ";
+    }
 }

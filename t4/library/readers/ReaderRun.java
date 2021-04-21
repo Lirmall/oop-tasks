@@ -1,27 +1,26 @@
 package oop.tasks.t4.library.readers;
 
 public class ReaderRun {
-    public static void main(String[] args) throws IncorrectLibraryCardNumber, IncorrectPhoneNumber,
-            IncorrectNumberOfBooks {
+    public static void main(String[] args) throws IncorrectLibraryCardNumberException, IncorrectPhoneNumberException,
+            IncorrectNumberOfBooksException {
         Reader reader1 = new Reader(
                 "Ivanov I.I.",
-                19,
                 "Computer science",
-                "17.12.2011",
-                12476);
+                "17.12.2011");
+        reader1.setLibraryCardNumber(19);
+        reader1.setPhoneNumber(12476);
         Reader reader2 = new Reader(
                 "Petrov P.A.",
-                12,
                 "Biology",
-                "15.06.2012",
-                12611);
+                "15.06.2012");
+        reader2.setLibraryCardNumber(12);
+        reader1.setPhoneNumber(12611);
         Reader reader3 = new Reader(
                 "Sidorov I.G.",
-                96,
                 "Geography",
-                "25.08.2008",
-                12412);
-
+                "25.08.2008");
+        reader3.setLibraryCardNumber(96);
+        reader3.setPhoneNumber(12412);
         Book book1 = new Book("G.Scildt", "Java 8. Complete edition");
         Book book2 = new Book("V.I.Vernadskii`", "Noosphere");
         Book book3 = new Book("R.L. Stevenson", "Treasure island");
