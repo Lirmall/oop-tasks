@@ -6,6 +6,7 @@ public class StringBuilding {
     public static void main(String[] args) {
         int i = 3;
         int j = 56;
+
         StringBuilder s1 = new StringBuilder();
         StringBuilder s2 = new StringBuilder();
         StringBuilder s3 = new StringBuilder();
