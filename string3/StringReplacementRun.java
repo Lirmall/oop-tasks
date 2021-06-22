@@ -18,5 +18,4 @@ public class StringReplacementRun {
 
         System.out.println(srp.replacement1(str2, str3));
     }
-
 }
