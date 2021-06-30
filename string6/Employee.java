@@ -18,5 +18,4 @@ public class Employee {
     public BigDecimal getSalary() {
         return salary;
     }
-
 }
