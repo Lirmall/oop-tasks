@@ -11,9 +11,9 @@ public class NewRegexDemo2 {
         Matcher matcher3 = pattern.matcher("cccab");
         boolean b1 = matcher1.matches();
         System.out.println(b1);
-        boolean b2 = matcher1.matches();
+        boolean b2 = matcher2.matches();
         System.out.println(b2);
-        boolean b3 = matcher1.matches();
+        boolean b3 = matcher3.matches();
         System.out.println(b3);
     }
 }
