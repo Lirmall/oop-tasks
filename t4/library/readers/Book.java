@@ -1,12 +1,27 @@
 package oop.tasks.t4.library.readers;
 
-//создать новый класс, содержащий имя и автора книги
 public class Book {
-    protected String bookAutor;
-    protected String bookName;
+    private String author;
+    private String name;
 
-    protected Book (String bookAutor, String bookName) {
-        this.bookAutor = bookAutor;
-        this.bookName = bookName;
+    public Book(String author, String name) {
+        this.setAuthor(author);
+        this.setName(name);
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

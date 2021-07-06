@@ -1,47 +1,67 @@
 package oop.tasks.t4.library.readers;
 
 public class ReaderRun {
-    public static void main(String[] args) {
-        Reader reader1 = new Reader("Иванов И.И.", 19, "Информатика", "17.12.2011", 12476);
-        Reader reader2 = new Reader("Петров П.А.", 12, "Биология", "15.06.2012", 12611);
-        Reader reader3 = new Reader("Сидоров И.Г.", 96, "География", "25.08.2008", 12412);
+    public static void main(String[] args) throws IncorrectLibraryCardNumberException, IncorrectPhoneNumberException,
+            IncorrectNumberOfBooksException {
+        Reader reader1 = new Reader(
+                "Ivanov I.I.",
+                "Computer science",
+                "17.12.2011");
+        reader1.setLibraryCardNumber(19);
+        reader1.setPhoneNumber(12476);
+        Reader reader2 = new Reader(
+                "Petrov P.A.",
+                "Biology",
+                "15.06.2012");
+        reader2.setLibraryCardNumber(12);
+        reader1.setPhoneNumber(12611);
+        Reader reader3 = new Reader(
+                "Sidorov I.G.",
+                "Geography",
+                "25.08.2008");
+        reader3.setLibraryCardNumber(96);
+        reader3.setPhoneNumber(12412);
+        Book book1 = new Book("G.Scildt", "Java 8. Complete edition");
+        Book book2 = new Book("V.I.Vernadskii`", "Noosphere");
+        Book book3 = new Book("R.L. Stevenson", "Treasure island");
 
-        Book book1 = new Book("Г.Шилдт", "Java 8. Полное издание");
-        Book book2 = new Book("В.И.Вернадский", "Ноосфера");
-        Book book3 = new Book("Р.Л.Стивенсон", "Остров сокровищ");
+        System.out.println("Readers:");
+        System.out.println(reader1.getFullName() + ", " + "born date: " + reader1.getDateOfBirth() + ", " + "faculty: "
+                + reader1.getFaculty() + ", " + "library card number: " + reader1.getLibraryCardNumber()
+                + ", " + "contact phone number: " + reader1.getPhoneNumber());
 
+        System.out.println(reader2.getFullName() + ", " + " born date: " + reader2.getDateOfBirth() + ", " + "faculty: "
+                + reader2.getFaculty() + ", " + "library card number: " + reader2.getLibraryCardNumber()
+                + ", " + "contact phone number: " + reader2.getPhoneNumber());
+
+        System.out.println(reader3.getFullName() + ", " + "born date: " + reader3.getDateOfBirth() + ", " + "faculty: "
+                + reader3.getFaculty() + ", " + "library card number: " + reader3.getLibraryCardNumber()
+                + ", " + "contact phone number: " + reader3.getPhoneNumber());
         System.out.println();
 
         reader1.takeBook(5);
         reader2.takeBook(3);
         reader3.takeBook(21);
-
         System.out.println();
 
-        reader1.takeBook("Приключения", "Словарь", "Энциклопедия");
-
+        reader1.takeBook("Adventures", "Vocabulary", "Encyclopedia");
         System.out.println();
 
         reader1.takeBook(book1);
         reader2.takeBook(book1, book3);
         reader3.takeBook(book2, book3);
-
         System.out.println();
 
         reader1.returnBook(5);
         reader2.returnBook(3);
         reader1.returnBook(21);
-
         System.out.println();
 
-        reader1.returnBook("Приключения", "Словарь", "Энциклопедия");
-
+        reader1.returnBook("Adventures", "Vocabulary", "Encyclopedia");
         System.out.println();
 
         reader1.returnBook(book1);
         reader2.returnBook(book1, book3);
         reader3.returnBook(book2, book3);
-
-        System.out.println();
     }
 }

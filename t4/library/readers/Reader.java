@@ -1,95 +1,143 @@
 package oop.tasks.t4.library.readers;
 
-/* Определить класс Reader, хранящий такую информацию о пользователе библиотеки:
-ФИО, номер читательского билета, факультет, дата рождения, телефон.
- */
 class Reader {
-    protected String fullName;
-    protected int readerTicket;
-    protected String faculty;
-    protected String bornDate;
-    protected int phoneNumber;
+    private String fullName;
+    private int libraryCardNumber;
+    private String faculty;
+    private String dateOfBirth;
+    private int phoneNumber;
 
-    protected Reader(String fullName, int readerTicket, String faculty, String bornDate, int phoneNumber) {
+    public Reader() {
+    }
+
+    public Reader(String fullName, String faculty, String dateOfBirth) {
         this.fullName = fullName;
-        this.readerTicket = readerTicket;
         this.faculty = faculty;
-        this.bornDate = bornDate;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public int getLibraryCardNumber() {
+        return libraryCardNumber;
+    }
+
+    public void setLibraryCardNumber(int libraryCardNumber) throws IncorrectLibraryCardNumberException {
+        if (libraryCardNumber < 0) {
+            throw new IncorrectLibraryCardNumberException();
+
+        } else {
+            this.libraryCardNumber = libraryCardNumber;
+        }
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) throws IncorrectPhoneNumberException {
         this.phoneNumber = phoneNumber;
+        if (phoneNumber < 0) {
+            throw new IncorrectPhoneNumberException();
+        }
     }
 
-/* takeBook, который будет принимать количество взятых книг.
-Выводит на консоль сообщение "Петров В. В. взял 3 книги".
- */
-
-    protected void takeBook(int i) {
-        String word = "книги";
-        if (i % 10 == 1) {
-            word = "книгу";
+    public void takeBook(int numberOfBooks) throws IncorrectNumberOfBooksException {
+        String word = "books";
+        if (numberOfBooks == 1) {
+            word = "book";
         }
 
-        if (i % 10 > 1 && i % 10 < 5) {
-            word = "книги";
+        if (numberOfBooks > 1) {
+            word = "books";
         }
 
-        if (i % 10 >= 5 || i > 10 && i < 20) {
-            word = "книг";
+        if (numberOfBooks < 0) {
+            throw new IncorrectNumberOfBooksException();
         }
 
-        System.out.println(this.fullName + " взял " + i + " " + word);
+        System.out.println(this.getFullName() + " took " + numberOfBooks + " " + word);
     }
 
-    /*takeBook, который будет принимать переменное количество названий книг.
-    Выводит на консоль сообщение "Петров В. В. взял книги: Приключения, Словарь, Энциклопедия".
-     */
-    protected void takeBook(String... bookName) {
-        System.out.print(this.fullName + " взял ");
+    public void takeBook(String... bookNames) {
+        System.out.print(this.getFullName() + " took ");
+        for (String i : bookNames) {
+            System.out.print(i + ", ");
+        }
+        System.out.println(".");
+    }
+
+    public void takeBook(Book... books) {
+        System.out.print(this.getFullName() + " took ");
+        for (Book i : books) {
+            System.out.print(i.getAuthor() + " " + i.getName() + ", ");
+        }
+        System.out.println(".");
+    }
+
+    public void returnBook(int numberOfBooks) throws IncorrectNumberOfBooksException {
+        String word = "books";
+        if (numberOfBooks == 1) {
+            word = "book";
+        }
+
+        if (numberOfBooks > 1) {
+            word = "books";
+        }
+
+        if (numberOfBooks < 0) {
+            throw new IncorrectNumberOfBooksException();
+        }
+
+        System.out.println(this.getFullName() + " returned " + numberOfBooks + " " + word);
+    }
+
+    public void returnBook(String... bookName) {
+        System.out.print(this.getFullName() + " returned ");
         for (String i : bookName) {
             System.out.print(i + ", ");
         }
         System.out.println(".");
     }
 
-    //takeBook, который будет принимать переменное количество объектов класса Book
-    protected void takeBook(Book... books) {
-        System.out.print(this.fullName + " взял ");
+    public void returnBook(Book... books) {
+        System.out.print(this.getFullName() + " returned ");
         for (Book i : books) {
-            System.out.print(i.bookName + ", ");
+            System.out.print(i.getAuthor() + " " + i.getName() + ", ");
         }
         System.out.println(".");
     }
 
-    //Аналогичным образом перегрузить метод returnBook().
-    protected void returnBook(int i) {
-        String word = "книги";
-        if (i % 10 == 1) {
-            word = "книгу";
-        }
-
-        if (i % 10 > 1 && i % 10 < 5) {
-            word = "книги";
-        }
-
-        if (i % 10 >= 5 || i > 10 && i < 20) {
-            word = "книг";
-        }
-
-        System.out.println(this.fullName + " вернул " + i + " " + word);
-    }
-
-    protected void returnBook(String... bookName) {
-        System.out.print(this.fullName + " вернул ");
-        for (String i : bookName) {
-            System.out.print(i + ", ");
-        }
-        System.out.println(".");
-    }
-
-    protected void returnBook(Book... books) {
-        System.out.print(this.fullName + " вернул ");
-        for (Book i : books) {
-            System.out.print(i.bookName + ", ");
-        }
-        System.out.println(".");
+    @Override
+    public String toString() {
+        return "Reader{" +
+                "fullName='" + fullName + '\'' +
+                ", libraryCardNumber=" + libraryCardNumber +
+                ", faculty='" + faculty + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                '}';
     }
 }
