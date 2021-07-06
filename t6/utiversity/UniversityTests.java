@@ -27,8 +27,8 @@ public class UniversityTests {
     public static void testIncorrectAverageMark() {
         try {
             Student student6 = new Student("Tim", "O'Nil", "Programming", -2);
-            double averageMark = student6.getAverageMark();
-            if (averageMark < 0 || averageMark > 5) {
+
+            if (student6.getAverageMark() < 0 || student6.getAverageMark() > 5) {
                 throw new IncorrectAverageMarkException();
             }
         } catch (IncorrectAverageMarkException e) {
@@ -36,5 +36,4 @@ public class UniversityTests {
         }
         assert false;
     }
-
 }
