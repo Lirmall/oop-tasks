@@ -4,12 +4,12 @@ import oop.tasks.t7.cars.and.drivers.com.company.details.Engine;
 import oop.tasks.t7.cars.and.drivers.com.company.professions.Driver;
 
 public class Car {
-    private String markOfAuto;
-    private double weight;
-    private String driverName;
-    private int driverDrivingExperience;
-    private String engineManufacturer;
-    private double enginePower;
+    private final String markOfAuto;
+    private final double weight;
+    private final String driverName;
+    private final int driverDrivingExperience;
+    private final String engineManufacturer;
+    private final double enginePower;
 
     public Car(String markOfAuto, double weight, String driverName, int driverDrivingExperience, String engineManufacturer, double enginePower) {
         this.markOfAuto = markOfAuto;
@@ -20,14 +20,14 @@ public class Car {
         this.enginePower = enginePower;
     }
 
-//    public Car(String markOfAuto, double weight, Driver driver, Engine engine) {
-//        this.markOfAuto = markOfAuto;
-//        this.weight = weight;
-//        this.driverName = driver.getFullName();
-//        this.driverDrivingExperience = driver.getDrivingExperience();
-//        this.engineManufacturer = engine.getManufacturer();
-//        this.enginePower = engine.getPower();
-//    }
+    public Car(String markOfAuto, double weight, Driver driver, Engine engine) {
+        this.markOfAuto = markOfAuto;
+        this.weight = weight;
+        this.driverName = driver.getFullName();
+        this.driverDrivingExperience = driver.getDrivingExperience();
+        this.engineManufacturer = engine.getManufacturer();
+        this.enginePower = engine.getPower();
+    }
 
     public String getMarkOfAuto() {
         return markOfAuto;

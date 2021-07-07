@@ -7,14 +7,16 @@ class Person {
     void move() {
         System.out.println("Такой-то Person ходит");
     }
+
     void talk() {
         System.out.println("Такой-то Person говорит");
     }
 
     public Person() {
         this.fullName = null;
-        this.age =0;
+        this.age = 0;
     }
+
     public Person(String fullName, int age) {
         this.fullName = fullName;
         this.age = age;

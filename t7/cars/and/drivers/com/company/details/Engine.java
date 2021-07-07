@@ -1,8 +1,8 @@
 package oop.tasks.t7.cars.and.drivers.com.company.details;
 
 public class Engine {
-    String manufacturer;
-    double power;
+    private String manufacturer;
+    private double power;
 
     public Engine(String manufacturer, double power) throws IncorrectEnginePowerException {
         this.setManufacturer(manufacturer);
@@ -19,5 +19,17 @@ public class Engine {
         } else {
             this.power = power;
         }
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public double getPower() {
+        return power;
+    }
+
+    public String getEngineInfo() {
+        return "Производитель двигателя: " + getManufacturer() + ", мощность: " + getPower() + ".";
     }
 }
