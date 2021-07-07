@@ -1,7 +1,7 @@
 package oop.tasks.t2.person.tasks;
 
 public class PersonRun {
-    public static void main(String[] args) throws IncorrectAge {
+    public static void main(String[] args) throws IncorrectAgeException {
         Person person1 = new Person();
         Person person2 = new Person("John Smith", 42);
 

@@ -4,12 +4,12 @@ class Person {
     private String fullName;
     private int age;
 
-    public Person() throws IncorrectAge {
+    public Person() throws IncorrectAgeException {
         this.setFullName(null);
         this.setAge(0);
     }
 
-    public Person(String fullName, int age) throws IncorrectAge {
+    public Person(String fullName, int age) throws IncorrectAgeException {
         this.setFullName(fullName);
         this.setAge(age);
     }
@@ -26,9 +26,9 @@ class Person {
         return age;
     }
 
-    public void setAge(int age) throws IncorrectAge {
+    public void setAge(int age) throws IncorrectAgeException {
         if (age < 0 || age > 130) {
-            throw new IncorrectAge();
+            throw new IncorrectAgeException();
         }
         this.age = age;
     }
