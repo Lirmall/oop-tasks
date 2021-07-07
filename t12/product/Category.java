@@ -1,18 +1,14 @@
 package oop.tasks.t12.product;
 
 public class Category {
-    private String name;
+    private final String name;
 
     public Category(String name) {
-        this.setName(name);
+        this.name = name;
     }
 
     public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        return this.name;
     }
 
     public void categoryAndProducts(Product... products) {

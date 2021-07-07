@@ -1,6 +1,6 @@
 package oop.tasks.t12.product;
 
-public class ProductTests {
+public class BasketTests {
     public static void main(String[] args) {
         testNumberOfItems();
         testPurchaseAmount();
@@ -11,8 +11,8 @@ public class ProductTests {
         Product notebook = new Product("notebook", 0.3, 4.9);
         Product laptop = new Product("laptop", 300, 4.9);
         Basket basket1 = new Basket(phone, notebook, laptop);
-        int number = basket1.numberOfItems();
-        assert number == 3;
+
+        assert basket1.numberOfItems() == 3;
     }
 
     static void testPurchaseAmount() {
@@ -20,7 +20,7 @@ public class ProductTests {
         Product notebook = new Product("notebook", 0.3, 4.9);
         Product laptop = new Product("laptop", 300, 4.9);
         Basket basket1 = new Basket(phone, notebook, laptop);
-        double number = basket1.purchaseAmount();
-        assert number == 550.3;
+
+        assert basket1.purchaseAmount() == 550.3;
     }
 }

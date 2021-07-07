@@ -1,37 +1,25 @@
 package oop.tasks.t12.product;
 
 public class Product {
-    private String name;
-    private double price;
-    private double rating;
+    private final String name;
+    private final double price;
+    private final double rating;
 
     public Product(String name, double price, double rating) {
-        this.setName(name);
-        this.setPrice(price);
-        this.setRating(rating);
+        this.name = name;
+        this.price = price;
+        this.rating = rating;
     }
 
     public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        return this.name;
     }
 
     public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+        return this.price;
     }
 
     public double getRating() {
         return rating;
-    }
-
-    public void setRating(double rating) {
-        this.rating = rating;
     }
 }

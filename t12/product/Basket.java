@@ -8,7 +8,9 @@ public class Basket {
 
     public Basket(Product... products) {
         items = new Product[products.length];
-        if (products.length - 1 >= 0) System.arraycopy(products, 0, items, 0, products.length);
+        if (products.length - 1 >= 0) {
+            System.arraycopy(products, 0, items, 0, products.length);
+        }
     }
 
     @Override
@@ -21,9 +23,7 @@ public class Basket {
     }
 
     public int numberOfItems() {
-        int number;
-        number = items.length;
-        return number;
+        return items.length;
     }
 
     public double purchaseAmount() {
