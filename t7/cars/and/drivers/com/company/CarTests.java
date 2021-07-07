@@ -8,40 +8,43 @@ import oop.tasks.t7.cars.and.drivers.com.company.vehicles.SportCar;
 
 public class CarTests {
     public static void main(String[] args) {
-        engineTest();
-        driverTest();
+        testEnginePower();
+        testDriverAge();
+        testDriverDrivingExperiences();
         carTest1();
         carTest2();
         lorryTest();
         sportCarTest();
     }
 
-    public static void engineTest() {
+    public static void testEnginePower() {
         Engine engine1 = new Engine("Volkswagen", 120);
 
-        double power = engine1.getPower();
-        assert power > 0;
+        assert engine1.getPower() == 120;
     }
 
-    public static void driverTest() {
+    public static void testDriverAge() {
         Driver driver1 = new Driver("Li Ming", 40, 20);
 
         int age = driver1.getAge();
-        assert age > 0;
+        assert driver1.getAge() == 40;
         int drivingExperience = driver1.getDrivingExperience();
         assert drivingExperience > 0;
         assert drivingExperience < age;
     }
 
+    public static void testDriverDrivingExperiences() {
+        Driver driver1 = new Driver("Li Ming", 40, 20);
+
+        assert driver1.getDrivingExperience() == 20;
+    }
+
     public static void carTest1() {
         Car car1 = new Car("Ford", 800, "John Will", 15, "Ford", 45);
 
-        double weight = car1.getWeight();
-        assert weight > 0;
-        int drivingExperience = car1.getDriverDrivingExperience();
-        assert drivingExperience > 0;
-        double enginePower = car1.getEnginePower();
-        assert enginePower > 0;
+        assert car1.getWeight() == 800;
+        assert car1.getDriverDrivingExperience() == 15;
+        assert car1.getEnginePower() == 45;
     }
 
     public static void carTest2() {
@@ -49,12 +52,9 @@ public class CarTests {
         Driver driver1 = new Driver("Li Ming", 40, 20);
         Car car2 = new Car("Toyota", 650, driver1, engine1);
 
-        double weight = car2.getWeight();
-        assert weight > 0;
-        double power = car2.getEnginePower();
-        assert power > 0;
-        int drivingExperience = driver1.getDrivingExperience();
-        assert drivingExperience > 0;
+        assert car2.getWeight() == 650;
+        assert car2.getEnginePower() == 120;
+        assert driver1.getDrivingExperience() == 20;
     }
 
     public static void lorryTest() {
@@ -62,14 +62,10 @@ public class CarTests {
         Driver driver1 = new Driver("Li Ming", 40, 20);
         Lorry lorry1 = new Lorry("Man", 2500, driver1, engine1, 20000);
 
-        double weight = lorry1.getWeight();
-        assert weight > 0;
-        double power = lorry1.getEnginePower();
-        assert power > 0;
-        int drivingExperience = driver1.getDrivingExperience();
-        assert drivingExperience > 0;
-        double bodyLiftingCapacity = lorry1.getBodyLiftingCapacity();
-        assert bodyLiftingCapacity > 0;
+        assert lorry1.getWeight() == 2500;
+        assert lorry1.getEnginePower() == 120;
+        assert driver1.getDrivingExperience() == 20;
+        assert lorry1.getBodyLiftingCapacity() == 20000;
     }
 
     public static void sportCarTest() {
@@ -77,13 +73,9 @@ public class CarTests {
         Driver driver1 = new Driver("Li Ming", 40, 20);
         SportCar sportCar1 = new SportCar("BMW", 700, driver1, engine1, 240);
 
-        double weight = sportCar1.getWeight();
-        assert weight > 0;
-        double power = sportCar1.getEnginePower();
-        assert power > 0;
-        int drivingExperience = driver1.getDrivingExperience();
-        assert drivingExperience > 0;
-        double maxSpeed = sportCar1.getMaxSpeed();
-        assert maxSpeed > 0;
+        assert sportCar1.getWeight() == 700;
+        assert sportCar1.getEnginePower() == 120;
+        assert driver1.getDrivingExperience() == 20;
+        assert sportCar1.getMaxSpeed() == 240;
     }
 }

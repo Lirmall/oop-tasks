@@ -4,12 +4,12 @@ import oop.tasks.t7.cars.and.drivers.com.company.details.Engine;
 import oop.tasks.t7.cars.and.drivers.com.company.professions.Driver;
 
 public class Car {
-    private String markOfAuto;
-    private double weight;
-    private String driverName;
-    private int driverDrivingExperience;
-    private String engineManufacturer;
-    private double enginePower;
+    private final String markOfAuto;
+    private final double weight;
+    private final String driverName;
+    private final int driverDrivingExperience;
+    private final String engineManufacturer;
+    private final double enginePower;
 
     public Car(String markOfAuto, double weight, String driverName, int driverDrivingExperience, String engineManufacturer, double enginePower) {
         this.markOfAuto = markOfAuto;
