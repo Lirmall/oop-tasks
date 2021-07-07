@@ -1,8 +1,13 @@
 package oop.tasks.t8;
 
 public class Animal {
-    private String food;
-    private String location;
+    private final String food;
+    private final String location;
+
+    public Animal(String food, String location) {
+        this.food = food;
+        this.location = location;
+    }
 
     public String getFood() {
         return food;
@@ -12,18 +17,7 @@ public class Animal {
         return location;
     }
 
-    public void setFood(String food) {
-        this.food = food;
-    }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public Animal(String food, String location) {
-        this.food = food;
-        this.location = location;
-    }
 
     public String makeNoise(){
         return "Animal makes noise";

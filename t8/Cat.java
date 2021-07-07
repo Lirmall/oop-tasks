@@ -1,25 +1,25 @@
 package oop.tasks.t8;
 
 public class Cat extends Animal{
-    public String animalName;
+    public String catName;
     public String catBreed;
 
     public Cat(String food, String location, String animalName, String catBreed) {
         super(food, location);
-        this.animalName = animalName;
+        this.catName = animalName;
         this.catBreed = catBreed;
     }
 
-    public String getAnimalName() {
-        return animalName;
+    public String getCatName() {
+        return catName;
     }
 
     public String getCatBreed() {
         return catBreed;
     }
 
-    public void setAnimalName(String animalName) {
-        this.animalName = animalName;
+    public void setCatName(String catName) {
+        this.catName = catName;
     }
 
     public void setCatBreed(String catBreed) {
@@ -27,10 +27,10 @@ public class Cat extends Animal{
     }
 
     public String makeNoise() {
-        return getAnimalName() + " meows.";
+        return getCatName() + " meows.";
     }
 
     public String eat() {
-        return getAnimalName() + " loves to hunt rodents";
+        return getCatName() + " loves to hunt rodents";
     }
 }

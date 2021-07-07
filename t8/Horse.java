@@ -1,36 +1,36 @@
 package oop.tasks.t8;
 
 public class Horse extends Animal{
-    public String animalName;
-    public String catBreed;
+    public String horseName;
+    public String horseBreed;
 
     public Horse(String food, String location, String animalName, String catBreed) {
         super(food, location);
-        this.animalName = animalName;
-        this.catBreed = catBreed;
+        this.horseName = animalName;
+        this.horseBreed = catBreed;
     }
 
-    public String getAnimalName() {
-        return animalName;
+    public String getHorseName() {
+        return horseName;
     }
 
-    public String getCatBreed() {
-        return catBreed;
+    public String getHorseBreed() {
+        return horseBreed;
     }
 
-    public void setAnimalName(String animalName) {
-        this.animalName = animalName;
+    public void setHorseName(String horseName) {
+        this.horseName = horseName;
     }
 
-    public void setCatBreed(String catBreed) {
-        this.catBreed = catBreed;
+    public void setHorseBreed(String horseBreed) {
+        this.horseBreed = horseBreed;
     }
 
     public String makeNoise() {
-        return getAnimalName() + " whinnies.";
+        return getHorseName() + " whinnies.";
     }
 
     public String eat() {
-        return getAnimalName() + " loves hay.";
+        return getHorseName() + " loves hay.";
     }
 }
