@@ -8,16 +8,28 @@ public class MiddleChars {
     }
 
     public String getString() {
-        return string;
+        return this.string;
     }
 
-    public String middleChars(String s) {
-        String result;
-        int i = s.length();
+    public String middleChars() {
+        String word = this.getString();
+        String result = null;
+        int i = word.length();
 
-        char[] l = new char[]{s.charAt((i / 2) - 1), s.charAt(i / 2)};
+        if (i == 0) {
+            result = "";
+        }
 
-        result = new String(l);
+        if (i > 1 && i % 2 == 0) {
+            char[] l = new char[]{word.charAt((i / 2) - 1), word.charAt(i / 2)};
+
+            result = new String(l);
+        }
+
+        if (i % 2 != 0) {
+            result = String.valueOf(word.charAt(word.length() / 2));
+        }
+
         return result;
     }
 
