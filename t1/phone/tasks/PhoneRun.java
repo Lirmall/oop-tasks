@@ -1,7 +1,7 @@
 package oop.tasks.t1.phone.tasks;
 
 public class PhoneRun {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IncorrectNumber, IncorrectWeight {
 
         Phone phone1 = new Phone(12, "nokia 3110", 89);
         Phone phone2 = new Phone(14, "motorola v3", 45);
@@ -14,15 +14,15 @@ public class PhoneRun {
         System.out.println(phone4.getNumber());
         System.out.println();
 
-        System.out.println("Номер " + phone1.getNumber() + " модель " + phone1.getModel() + " вес " + phone1.getWeight());
-        System.out.println("Номер " + phone2.getNumber() + " модель " + phone2.getModel() + " вес " + phone2.getWeight());
-        System.out.println("Номер " + phone3.getNumber() + " модель " + phone3.getModel() + " вес " + phone3.getWeight());
-        System.out.println("Номер " + phone4.getNumber() + " модель " + phone4.getModel() + " вес " + phone4.getWeight());
+        System.out.println("Number " + phone1.getNumber() + " model " + phone1.getModel() + " weight " + phone1.getWeight());
+        System.out.println("Number " + phone2.getNumber() + " model " + phone2.getModel() + " weight " + phone2.getWeight());
+        System.out.println("Number " + phone3.getNumber() + " model " + phone3.getModel() + " weight " + phone3.getWeight());
+        System.out.println("Number " + phone4.getNumber() + " model " + phone4.getModel() + " weight " + phone4.getWeight());
         System.out.println();
 
-        phone1.receiveCall("Первый");
-        phone2.receiveCall("Второй");
-        phone3.receiveCall("Третий");
+        phone1.receiveCall("First");
+        phone2.receiveCall("Second");
+        phone3.receiveCall("Third");
         System.out.println();
 
         System.out.println(phone1.getNumber());
@@ -30,9 +30,9 @@ public class PhoneRun {
         System.out.println(phone3.getNumber());
         System.out.println();
 
-        phone1.receiveCall("Первый", phone1.getNumber());
-        phone2.receiveCall("Второй", phone2.getNumber());
-        phone3.receiveCall("Третий", phone3.getNumber());
+        phone1.receiveCall("First", phone1.getNumber());
+        phone2.receiveCall("Second", phone2.getNumber());
+        phone3.receiveCall("Third", phone3.getNumber());
         System.out.println();
 
         phone1.sendMessage(phone2.getNumber(), phone3.getNumber());
