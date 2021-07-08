@@ -12,37 +12,18 @@ public class StudentsList {
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public String getGrade() {
-        return grade;
+        return this.grade;
     }
 
     public String getSubject() {
-        return subject;
+        return this.subject;
     }
 
-    public void studentList (String lastName, String grade, String subject) {
-
-        StringBuffer i = new StringBuffer();
-        i.setLength(15);
-        StringBuffer j = new StringBuffer();
-        j.setLength(3);
-        StringBuffer k = new StringBuffer();
-        k.setLength(10);
-
-        for (int l = 0; l < (lastName.length()); l++) {
-            i.setCharAt(l, lastName.charAt(l));
-        }
-
-        for (int l = 0; l < (grade.length()); l++) {
-            j.setCharAt(l, grade.charAt(l));
-        }
-
-        for (int l = 0; l < (subject.length()); l++) {
-            k.setCharAt(l, subject.charAt(l));
-        }
-        System.out.println("Student " + i + " received a grade of " + j + " in the subject of " + k);
+    public void studentList() {
+        System.out.printf("Student %-15s received a grade of %-3s in the subject of %-10s\n", this.getLastName(), this.getGrade(), this.getSubject());
     }
 }
