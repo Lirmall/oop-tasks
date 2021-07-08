@@ -4,16 +4,36 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class WordCounter {
-    public static void main(String[] args) {
-        int i = 0;
-        String str = "One two three раз два три one1 two2 123 ";
+    private final String str;
+
+    public WordCounter(String str) {
+        this.str = str;
+    }
+
+    public String getStr() {
+        return str;
+    }
+
+    public int wordCounterVer1() {
+        int result = 0;
         Pattern pattern = Pattern.compile("[a-z]+\\s", Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(str);
+        Matcher matcher = pattern.matcher(this.getStr());
 
         while (matcher.find()) {
-            i++;
+            result++;
+        }
+        return result;
+    }
+
+    public int wordCounterVer2() {
+        int result = 0;
+        Pattern pattern = Pattern.compile("[A-Za-z]+\\s");
+        Matcher matcher = pattern.matcher(this.getStr());
+
+        while (matcher.find()) {
+            result++;
         }
 
-        System.out.println(i);
+        return result;
     }
 }

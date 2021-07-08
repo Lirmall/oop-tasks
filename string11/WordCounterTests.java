@@ -6,6 +6,8 @@ import java.util.regex.Pattern;
 public class WordCounterTests {
     public static void main(String[] args) {
         counterTest();
+        testWordCounterVer1();
+        testWordCounterVer2();
     }
 
     static void counterTest() {
@@ -19,5 +21,17 @@ public class WordCounterTests {
         }
 
         assert i == 3;
+    }
+
+    static void testWordCounterVer1() {
+        WordCounter wc1 = new WordCounter("One two three раз два три one1 two2 123 ");
+
+        assert wc1.wordCounterVer1() == 3;
+    }
+
+    static void testWordCounterVer2() {
+        WordCounter wc1 = new WordCounter("One two three раз два три one1 two2 123 ");
+
+        assert wc1.wordCounterVer1() == 3;
     }
 }
