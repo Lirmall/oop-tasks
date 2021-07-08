@@ -12,10 +12,9 @@ public class StringReplacementRun {
 
         String str1 = srp.getString();
         System.out.println(str1 + "\n");
-        System.out.println(srp.getString().length());
 
-        System.out.println(srp.replacement1("Object-oriented programming", "OOP") + "\n");
+        System.out.println(srp.replacement("Object-oriented programming", "OOP") + "\n");
 
-        System.out.println(srp.replacement1(str2, str3));
+        System.out.println(srp.replacement(str2, str3));
     }
 }

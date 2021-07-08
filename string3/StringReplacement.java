@@ -14,19 +14,19 @@ public class StringReplacement {
         return string;
     }
 
-    public String replacement1(String string1, String string2) {
+    public String replacement(String stringToBeReplaced, String stringThatWillReplace) {
 
         int i = 0;
         StringBuilder str = new StringBuilder(this.getString());
         String result;
 
-        Pattern pat = Pattern.compile(string1);
+        Pattern pat = Pattern.compile(stringToBeReplaced);
         Matcher mat = pat.matcher(str);
 
         do {
             mat.find(i);
             mat.find();
-            str.replace(mat.start(), mat.end(), string2);
+            str.replace(mat.start(), mat.end(), stringThatWillReplace);
             i = mat.start();
         } while (mat.find());
 

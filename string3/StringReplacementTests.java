@@ -14,7 +14,7 @@ public class StringReplacementTests {
         String str1 = "Object-oriented programming is a programming language model  organized around objects rather than actions and data rather than logic. \n" +
                 "OOP blabla. Object-oriented programming bla. OOP bla-bla";
 
-        String str2 = srp.replacement1("Object-oriented programming", "OOP");
+        String str2 = srp.replacement("Object-oriented programming", "OOP");
         assert str2.equals(str1);
 
     }
@@ -29,7 +29,7 @@ public class StringReplacementTests {
         String str4 = "Object-oriented programming is a programming language model  organized around objects rather than actions and data rather than logic. \n" +
                 "OOP blabla. Object-oriented programming bla. OOP bla-bla";
 
-        String str1 = srp.replacement1(str2, str3);
+        String str1 = srp.replacement(str2, str3);
         assert str1.equals(str4);
     }
 }
