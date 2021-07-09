@@ -2,7 +2,7 @@ package oop.tasks.string10;
 
 import java.util.*;
 
-public class StringWordsFinder extends WordsFinder{
+public class StringWordsFinder extends WordsFinder {
     String string;
 
     public StringWordsFinder(String string) {
@@ -38,7 +38,6 @@ public class StringWordsFinder extends WordsFinder{
                 break;
             }
         }
-
         return key;
     }
 
@@ -64,7 +63,6 @@ public class StringWordsFinder extends WordsFinder{
                     j = strB.length() - 1;
                 }
             }
-
         }
         return strB.toString();
     }

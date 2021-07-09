@@ -2,9 +2,10 @@ package oop.tasks.string10;
 
 public class WordsFinderRun {
     public static void main(String[] args) {
-        StringWordsFinder str = new StringWordsFinder("fffff ab f 1234 jkjk dddasssaddddswwwwghhh");
+        StringWordsFinder stringWordsFinder = new StringWordsFinder("fffff ab f 1234 jkjk dddasssaddddswwwwghhh");
+        SetWordsFinder setWordsFinder = new SetWordsFinder("fffff ab f 1234 jkjk dddasssaddddswwwwghhh");
 
-        str.wordFinderWithLeastNumberOfDifferentChars();
-
+        stringWordsFinder.wordFinderWithLeastNumberOfDifferentChars();
+        setWordsFinder.wordFinderWithLeastNumberOfDifferentChars();
     }
 }
