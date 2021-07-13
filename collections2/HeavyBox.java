@@ -1,11 +1,11 @@
 package oop.tasks.collections2;
 
 public class HeavyBox {
-    String name;
-    double length;
-    double width;
-    double height;
-    double weight;
+    private String name;
+    private double length;
+    private double width;
+    private double height;
+    private double weight;
 
     public HeavyBox(String name, double length, double width, double height, double weight) {
         this.name = name;
