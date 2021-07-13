@@ -21,7 +21,7 @@ public class HeavyBox {
             System.out.println("Box width must be greater than zero");
         }
 
-        if(height > 0) {
+        if (height > 0) {
             this.height = height;
         } else {
             System.out.println("Box height must be greater than zero");

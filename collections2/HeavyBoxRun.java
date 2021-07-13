@@ -18,26 +18,6 @@ public class HeavyBoxRun {
         arrayListOfHeavyBoxes.add(steelBox);
         arrayListOfHeavyBoxes.add(titanBox);
 
-        for (Object hb : arrayListOfHeavyBoxes) {
-            System.out.println(hb);
-        }
-        System.out.println();
-
-        titanBox = titanBox.weightChange(1.0);
-        arrayListOfHeavyBoxes.set(arrayListOfHeavyBoxes.size() - 1, titanBox);
-
-        for (Object hb : arrayListOfHeavyBoxes) {
-            System.out.println(hb);
-        }
-        System.out.println();
-
-        arrayListOfHeavyBoxes.remove(arrayListOfHeavyBoxes.remove(arrayListOfHeavyBoxes.size() - 1));
-
-        for (Object hb : arrayListOfHeavyBoxes) {
-            System.out.println(hb);
-        }
-        System.out.println();
-
         HeavyBox[] arrayOfBoxesNo1 = new HeavyBox[arrayListOfHeavyBoxes.size()];
 
 
