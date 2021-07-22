@@ -3,13 +3,14 @@ package oop.tasks.collections7;
 import java.util.*;
 
 public class WarehouseOfBoxesListVersion {
-    private ArrayList<HeavyBox> heavyBoxList = new ArrayList<>();
+    private List<HeavyBox> heavyBoxList = new ArrayList<>();
 
-    public ArrayList<HeavyBox> getHeavyBoxList() {
+    public List<HeavyBox> getHeavyBoxList() {
         return this.heavyBoxList;
     }
 
     public WarehouseOfBoxesListVersion() {
+
     }
 
     public WarehouseOfBoxesListVersion(HeavyBox... hb) {
@@ -24,7 +25,7 @@ public class WarehouseOfBoxesListVersion {
             result = "This warehouse is empty";
         }
 
-        if (this.getHeavyBoxList().listIterator().hasNext()) {
+        if (this.getHeavyBoxList().iterator().hasNext()) {
             for (HeavyBox heavyBox : this.getHeavyBoxList()) {
                 result = result.concat(heavyBox.toString() + "\n");
             }
