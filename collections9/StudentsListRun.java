@@ -44,7 +44,15 @@ public class StudentsListRun {
         System.out.println();
 
         firstYearStudents.printStudentsList(allStudents.getStudentList(), 1);
+        System.out.println();
 
+        firstYearStudents.printStudentsList(allStudents.getStudentList(), 2);
+        System.out.println();
+
+        firstYearStudents.printStudentsList(allStudents.getStudentList(), 3);
+        System.out.println();
+
+        firstYearStudents.printStudentsList(allStudents.getStudentList(), 4);
         System.out.println();
 
         firstYearStudents.expulsionFromTheUniversity();
