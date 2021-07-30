@@ -1,8 +1,5 @@
 package oop.tasks.string12;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class PalindromeFinderByChars extends PalindromeFinder {
 
 
@@ -11,56 +8,42 @@ public class PalindromeFinderByChars extends PalindromeFinder {
     }
 
     @Override
-    public String palindromeFind() {
-        Pattern pattern = Pattern.compile("[0-9]{2,}");
-        Matcher matcher = pattern.matcher(this.getString());
-        if (!matcher.find()) {
-            return "This String is empty or does not contain digital palindromes";
-        }
-
+    public String findPalindrome(String oneWord) {
         String result = "";
-        while (matcher.find()) {
-            String word = matcher.group();
-            int i = 0;
-            int j = word.length() - 1;
 
-            if (word.length() % 2 == 0) {
-                while (i <= word.length() / 2 - 1) {
-                    if (word.charAt(i) == word.charAt(j)) {
-                        i++;
-                        j--;
+        int i = 0;
+        int j = oneWord.length() - 1;
 
-                        if (i + 1 == j) {
-                            result = result.concat(word + "\n");
-                        }
-                    } else {
-                        break;
+        if (oneWord.length() % 2 == 0) {
+            while (i <= oneWord.length() / 2 - 1) {
+                if (oneWord.charAt(i) == oneWord.charAt(j)) {
+                    i++;
+                    j--;
+
+                    if (i + 1 == j) {
+                        result = result.concat(oneWord + "\n");
                     }
-
+                } else {
+                    break;
                 }
-            }
 
-            if (word.length() % 2 == 1) {
-                while (i <= word.length() / 2) {
-                    if (word.charAt(i) == word.charAt(j)) {
-                        i++;
-                        j--;
-
-                        if (i == j) {
-                            result = result.concat(word + "\n");
-                        }
-                    } else {
-                        break;
-                    }
-                }
             }
         }
-        if (result.equals("")) {
-            result = "This String is empty or does not contain digital palindromes";
+
+        if (oneWord.length() % 2 == 1) {
+            while (i <= oneWord.length() / 2) {
+                if (oneWord.charAt(i) == oneWord.charAt(j)) {
+                    i++;
+                    j--;
+
+                    if (i == j) {
+                        result = result.concat(oneWord + "\n");
+                    }
+                } else {
+                    break;
+                }
+            }
         }
         return result;
     }
-
-
 }
-
