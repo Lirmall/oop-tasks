@@ -16,14 +16,20 @@ public class RepetitionRemover {
     }
 
     public String repetitionRemover() {
-        String result;
-        String [] arrayOfWords = this.getString().split("\\s");
+        String result = "";
+
+        String[] arrayOfWords = this.getString().split(",\\s");
 
         Set<String> setOfWords = new TreeSet<>();
 
         Collections.addAll(setOfWords, arrayOfWords);
-
-        result = setOfWords.toString();
+        for (String s : setOfWords) {
+            result = result.concat(s + ", ");
+        }
+        StringBuilder intermediateResult = new StringBuilder(result);
+        intermediateResult.deleteCharAt(intermediateResult.length() - 1);
+        intermediateResult.deleteCharAt(intermediateResult.length() - 1);
+        result = new String(intermediateResult);
         return result;
     }
 }
