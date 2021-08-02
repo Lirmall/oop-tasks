@@ -9,7 +9,7 @@ public class PetMap {
 
     public PetMap(Pet... pets) {
         for (Pet p : pets) {
-            this.petMap.put(p.getName(), p);
+            this.petMap.put(p.getPetOwnersFullName(), p);
         }
     }
 
