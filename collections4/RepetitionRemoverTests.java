@@ -8,6 +8,7 @@ public class RepetitionRemoverTests {
         testEmptyString();
         testOneChar();
         testOneWord();
+        testShuffleRepetitions();
     }
 
     public static void testRepeatAtStart() {
@@ -40,4 +41,8 @@ public class RepetitionRemoverTests {
         assert string.repetitionRemover().equals("123345");
     }
 
+    public static void testShuffleRepetitions () {
+        RepetitionRemover string = new RepetitionRemover("1, 2, 1, 3, 4, 5, 2");
+        assert string.repetitionRemover().equals("1, 2, 3, 4, 5");
+    }
 }
