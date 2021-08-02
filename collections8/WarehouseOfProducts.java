@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class WarehouseOfProducts {
-    private HashMap<String, Product> productHashMap = new HashMap<>();
+    private Map<String, Product> productHashMap = new HashMap<>();
 
     public WarehouseOfProducts(Product... products) {
         for (Product p : products) {
@@ -14,7 +14,7 @@ public class WarehouseOfProducts {
         }
     }
 
-    public HashMap<String, Product> getProductHashMap() {
+    public Map<String, Product> getProductHashMap() {
         return this.productHashMap;
     }
 
