@@ -2,8 +2,8 @@ package oop.tasks.string12;
 
 public class PalindromeFinderUsingStringMethods extends PalindromeFinder {
 
-    public PalindromeFinderUsingStringMethods(String string) {
-        super(string);
+    public PalindromeFinderUsingStringMethods(String string, Finder finder) {
+        super(string, finder);
     }
 
     @Override
@@ -16,7 +16,9 @@ public class PalindromeFinderUsingStringMethods extends PalindromeFinder {
 
         if (oneWord.equals(sbRev)) {
             result = result.concat(oneWord + "\n");
+
         }
+
         return result;
     }
 }

@@ -2,9 +2,8 @@ package oop.tasks.string12;
 
 public class PalindromeFinderByChars extends PalindromeFinder {
 
-
-    public PalindromeFinderByChars(String string) {
-        super(string);
+    public PalindromeFinderByChars(String string, Finder finder) {
+        super(string, finder);
     }
 
     @Override
@@ -26,7 +25,6 @@ public class PalindromeFinderByChars extends PalindromeFinder {
                 } else {
                     break;
                 }
-
             }
         }
 

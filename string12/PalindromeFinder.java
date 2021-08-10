@@ -1,13 +1,13 @@
 package oop.tasks.string12;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+public abstract class PalindromeFinder<NeededFinder extends Finder> {
+    private static final String EMPTY_STRING = "This String is empty or does not contain palindromes";
+    private final String string;
+    private final NeededFinder neededFinder;
 
-public abstract class PalindromeFinder {
-    private String string;
-
-    public PalindromeFinder(String string) {
+    public PalindromeFinder(String string, NeededFinder neededFinder) {
         this.string = string;
+        this.neededFinder = neededFinder;
     }
 
     public String getString() {
@@ -15,25 +15,16 @@ public abstract class PalindromeFinder {
     }
 
     public String scanningTextToFindPalindromes() {
-        Pattern pattern = Pattern.compile("[0-9]{2,}");
-        Matcher matcher = pattern.matcher(this.getString());
-
-        if (!matcher.find()) {
-            return "This String is empty or does not contain digital palindromes";
-        }
         String result = "";
-        while (matcher.find()) {
-            String foundWord = matcher.group();
-            result = result.concat(this.findPalindrome(foundWord));
+        String[] foundWords = this.neededFinder.transformingTheListOfFoundWordsIntoAnArray(this.getString());
+
+        for (String oneWordFromArray : foundWords) {
+            result = result.concat(this.findPalindrome(oneWordFromArray));
         }
 
-        if (result.equals("")) {
-            result = "This String is empty or does not contain digital palindromes";
-        }
-
-        return result;
+        return result.equals("") ? EMPTY_STRING : result;
     }
 
-    public abstract String findPalindrome(String oneWord);
+    protected abstract String findPalindrome(String oneWord);
 }
 

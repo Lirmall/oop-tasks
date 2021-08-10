@@ -2,8 +2,8 @@ package oop.tasks.string12;
 
 public class PalindromeFinderUseFor extends PalindromeFinder {
 
-    public PalindromeFinderUseFor(String string) {
-        super(string);
+    public PalindromeFinderUseFor(String string, Finder finder) {
+        super(string, finder);
     }
 
     @Override
