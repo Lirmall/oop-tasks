@@ -68,17 +68,10 @@ public class HeavyBox implements Comparable<HeavyBox> {
         int result = 0;
         if (this.getWeight() > heavyBox.getWeight()) {
             result = 1;
-            return result;
-        }
-
-        if (this.getWeight() < heavyBox.getWeight()) {
-            result = -1;
-            return result;
-        }
-
-        if (this.getWeight() == heavyBox.getWeight()) {
-            result = 0;
-
+        } else {
+            if (this.getWeight() < heavyBox.getWeight()) {
+                result = -1;
+            }
         }
         return result;
     }
