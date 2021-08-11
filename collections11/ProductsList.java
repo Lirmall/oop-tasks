@@ -23,7 +23,10 @@ public class ProductsList {
             }
         };
         products.sort(productComparator);
-        result = result.concat(products.toString());
+        Iterator<Product> productIterator = products.iterator();
+        while (productIterator.hasNext()) {
+            result = result.concat(productIterator.next().toString());
+        }
         return result;
     }
 
@@ -37,7 +40,9 @@ public class ProductsList {
             }
         };
         products.sort(productComparator);
-        result = result.concat(products.toString());
+        for (Product product : products) {
+            result = result.concat(product.toString());
+        }
         return result;
     }
 
@@ -46,7 +51,9 @@ public class ProductsList {
         ArrayList<Product> products = new ArrayList<>(this.getProductList());
         Comparator<Product> productComparator = (o1, o2) -> (int) (10*(o1.getRating() - o2.getRating()));
         products.sort(productComparator);
-        result = result.concat(products.toString());
+        for (Product product : products) {
+            result = result.concat(product.toString());
+        }
         return result;
     }
 
@@ -61,7 +68,9 @@ public class ProductsList {
         };
         products.sort(productComparator.reversed());
 
-        result = result.concat(products.toString());
+        for (Product product : products) {
+            result = result.concat(product.toString());
+        }
         return result;
     }
 
@@ -75,7 +84,9 @@ public class ProductsList {
             }
         };
         products.sort(productComparator.reversed());
-        result = result.concat(products.toString());
+        for (Product product : products) {
+            result = result.concat(product.toString());
+        }
         return result;
     }
 
@@ -84,7 +95,9 @@ public class ProductsList {
         ArrayList<Product> products = new ArrayList<>(this.getProductList());
         Comparator<Product> productComparator = (o1, o2) -> (int) (10*(o1.getRating() - o2.getRating()));
         products.sort(productComparator.reversed());
-        result = result.concat(products.toString());
+        for (Product product : products) {
+            result = result.concat(product.toString());
+        }
         return result;
     }
 
