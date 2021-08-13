@@ -8,6 +8,6 @@ public class PetRun {
 
         PetMap pets = new PetMap(tom, kesha, spiky);
 
-        System.out.println(pets.printPetsNames());
+        System.out.println(pets.printPetNames());
     }
 }

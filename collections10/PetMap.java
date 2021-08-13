@@ -1,30 +1,36 @@
 package oop.tasks.collections10;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class PetMap {
-    private Map<String, Pet> petMap = new HashMap<>();
+    private Map<Integer, Pet> petMap = new HashMap<>();
 
     public PetMap(Pet... pets) {
         for (Pet p : pets) {
-            this.petMap.put(p.getPetOwnersFullName(), p);
+            this.petMap.put(p.hashCode(), p);
         }
     }
 
-    public Map<String, Pet> getPetMap() {
+    public Map<Integer, Pet> getPetMap() {
         return petMap;
     }
 
-    public String printPetsNames () {
+    public String printPetsKeySet() {
         String result = "";
-        Iterator<String> itr = this.petMap.keySet().iterator();
+        Iterator<Integer> itr = this.petMap.keySet().iterator();
         while (itr.hasNext()) {
-            String name = itr.next();
+            Integer name = itr.next();
             result = result.concat(name + "\n");
         }
 
+        return result;
+    }
+
+    public String printPetNames() {
+        String result = "";
+        for (Pet pet : this.petMap.values()) {
+            result = result.concat(pet.getName() + "\n");
+        }
         return result;
     }
 
