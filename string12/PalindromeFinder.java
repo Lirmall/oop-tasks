@@ -16,7 +16,7 @@ public abstract class PalindromeFinder<NeededFinder extends Finder> {
 
     public String scanningTextToFindPalindromes() {
         String result = "";
-        String[] foundWords = this.neededFinder.transformingTheListOfFoundWordsIntoAnArray(this.getString());
+        String[] foundWords = this.neededFinder.transformingStringIntoWords(this.getString());
 
         for (String oneWordFromArray : foundWords) {
             result = result.concat(this.findPalindrome(oneWordFromArray));

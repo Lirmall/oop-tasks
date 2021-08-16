@@ -1,9 +1,9 @@
 package oop.tasks.string12;
 
-public class PalindromeFinderByChars extends PalindromeFinder {
+public class PalindromeFinderByChars<NeededFinder extends Finder> extends PalindromeFinder<NeededFinder> {
 
     public PalindromeFinderByChars(String string, Finder finder) {
-        super(string, finder);
+        super(string, (NeededFinder) finder);
     }
 
     @Override

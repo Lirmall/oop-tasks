@@ -5,22 +5,22 @@ public class PalindromeFinderRun {
         NumbersFinder numbersFinder = new NumbersFinder();
         StringFinder stringFinder = new StringFinder();
 
-        PalindromeFinder numberPalindromeFinderUseStringMethods = new PalindromeFinderUsingStringMethods(
+        PalindromeFinder<NumbersFinder> numberPalindromeFinderUseStringMethods = new PalindromeFinderUsingStringMethods<>(
                 "If there are dz 'tails', start with 1 not passed assignment. 555 123 324 111 121 4554 21312", numbersFinder);
 
-        PalindromeFinder numberPalindromeFinderByChars = new PalindromeFinderByChars(
+        PalindromeFinder<NumbersFinder> numberPalindromeFinderByChars = new PalindromeFinderByChars<>(
                 "If there are dz 'tails', start with 1 not passed assignment. 555 123 324 111 121 4554 21312", numbersFinder);
 
-        PalindromeFinder numberPalindromeFinderUseFor = new PalindromeFinderUseFor(
+        PalindromeFinder<NumbersFinder> numberPalindromeFinderUseFor = new PalindromeFinderUseFor<>(
                 "If there are dz 'tails', start with 1 not passed assignment. 555 123 324 111 121 4554 21312", numbersFinder);
 
-        PalindromeFinder stringPalindromeUseStringMethods = new PalindromeFinderUsingStringMethods(
+        PalindromeFinder<StringFinder> stringPalindromeUseStringMethods = new PalindromeFinderUsingStringMethods<>(
                 "bob bib madam lulz tail chest", stringFinder);
 
-        PalindromeFinder stringPalindromeFinderByChars = new PalindromeFinderByChars(
+        PalindromeFinder<StringFinder> stringPalindromeFinderByChars = new PalindromeFinderByChars<>(
                 "bob bib madam lulz tail chest", stringFinder);
 
-        PalindromeFinder stringPalindromeFinderUseFor = new PalindromeFinderUseFor(
+        PalindromeFinder<StringFinder> stringPalindromeFinderUseFor = new PalindromeFinderUseFor<>(
                 "bob bib madam lulz tail chest", stringFinder);
 
         System.out.println("Number palindromes:");
