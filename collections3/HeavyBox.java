@@ -65,16 +65,13 @@ public class HeavyBox implements Comparable<HeavyBox> {
 
     @Override
     public int compareTo(HeavyBox heavyBox) {
-        int result;
         if (this.getWeight() > heavyBox.getWeight()) {
-            result = 1;
+            return 1;
+        } else if (this.getWeight() < heavyBox.getWeight()) {
+            return -1;
         } else {
-            if (this.getWeight() < heavyBox.getWeight()) {
-                result = -1;
-            } else {
-                result = 0;
-            }
+            return 0;
         }
-        return result;
     }
 }
+
