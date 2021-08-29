@@ -1,13 +1,14 @@
 package oop.tasks.t7.cars.and.drivers.com.company;
 
 import oop.tasks.t7.cars.and.drivers.com.company.details.Engine;
+import oop.tasks.t7.cars.and.drivers.com.company.details.IncorrectEnginePowerException;
 import oop.tasks.t7.cars.and.drivers.com.company.professions.Driver;
 import oop.tasks.t7.cars.and.drivers.com.company.vehicles.Car;
 import oop.tasks.t7.cars.and.drivers.com.company.vehicles.Lorry;
 import oop.tasks.t7.cars.and.drivers.com.company.vehicles.SportCar;
 
 public class CarRun {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IncorrectEnginePowerException {
 
         Engine engine1 = new Engine("Volkswagen", 120);
         Engine engine2 = new Engine("BMW", 240);
