@@ -1,13 +1,14 @@
 package oop.tasks.t7.cars.and.drivers.com.company;
 
 import oop.tasks.t7.cars.and.drivers.com.company.details.Engine;
+import oop.tasks.t7.cars.and.drivers.com.company.details.IncorrectEnginePowerException;
 import oop.tasks.t7.cars.and.drivers.com.company.professions.Driver;
 import oop.tasks.t7.cars.and.drivers.com.company.vehicles.Car;
 import oop.tasks.t7.cars.and.drivers.com.company.vehicles.Lorry;
 import oop.tasks.t7.cars.and.drivers.com.company.vehicles.SportCar;
 
 public class CarTests {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IncorrectEnginePowerException {
         testEnginePower();
         testDriverAge();
         testDriverDrivingExperiences();
@@ -17,7 +18,7 @@ public class CarTests {
         sportCarTest();
     }
 
-    public static void testEnginePower() {
+    public static void testEnginePower() throws IncorrectEnginePowerException {
         Engine engine1 = new Engine("Volkswagen", 120);
 
         assert engine1.getPower() == 120;
@@ -47,7 +48,7 @@ public class CarTests {
         assert car1.getEnginePower() == 45;
     }
 
-    public static void carTest2() {
+    public static void carTest2() throws IncorrectEnginePowerException {
         Engine engine1 = new Engine("Volkswagen", 120);
         Driver driver1 = new Driver("Li Ming", 40, 20);
         Car car2 = new Car("Toyota", 650, driver1, engine1);
@@ -57,7 +58,7 @@ public class CarTests {
         assert driver1.getDrivingExperience() == 20;
     }
 
-    public static void lorryTest() {
+    public static void lorryTest() throws IncorrectEnginePowerException {
         Engine engine1 = new Engine("Volkswagen", 120);
         Driver driver1 = new Driver("Li Ming", 40, 20);
         Lorry lorry1 = new Lorry("Man", 2500, driver1, engine1, 20000);
@@ -68,7 +69,7 @@ public class CarTests {
         assert lorry1.getBodyLiftingCapacity() == 20000;
     }
 
-    public static void sportCarTest() {
+    public static void sportCarTest() throws IncorrectEnginePowerException {
         Engine engine1 = new Engine("Volkswagen", 120);
         Driver driver1 = new Driver("Li Ming", 40, 20);
         SportCar sportCar1 = new SportCar("BMW", 700, driver1, engine1, 240);
